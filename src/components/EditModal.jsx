@@ -5,6 +5,10 @@ import Form from "react-bootstrap/Form";
 import * as Icon from "react-bootstrap-icons";
 
 const EditModal = ({ showEditModal, handleCloseEditModal, editTask, _id }) => {
+      const handleSaveChanges = (e) => {
+        editTask(e);
+        handleCloseEditModal();
+      };
   return (
     <Modal show={showEditModal} onHide={handleCloseEditModal}>
       <Modal.Header closeButton>
@@ -48,7 +52,7 @@ const EditModal = ({ showEditModal, handleCloseEditModal, editTask, _id }) => {
             <Button variant="secondary" onClick={handleCloseEditModal}>
               Close
             </Button>
-            <Button variant="primary" onClick={editTask} value={_id}>
+            <Button variant="primary" onClick={handleSaveChanges} value={_id}>
               Save Changes
             </Button>
           </Modal.Footer>

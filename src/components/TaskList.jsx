@@ -1,6 +1,6 @@
 import React from "react";
 import TaskItem from "./TaskItem";
-const TaskList = ({ tasks, deleteTask }) => {
+const TaskList = ({ tasks, deleteTask, editTask }) => {
   return (
     <div>
       <div className="header-title">
@@ -15,6 +15,7 @@ const TaskList = ({ tasks, deleteTask }) => {
           expirationDate={task.expirationDate}
           priority={task.priority}
           deleteTask={deleteTask}
+          editTask={editTask}
         />
       ))}
     </div>
